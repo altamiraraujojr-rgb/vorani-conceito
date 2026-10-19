@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voraniconceito.com.br/sitemap.xml

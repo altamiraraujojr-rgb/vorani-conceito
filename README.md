@@ -1,5 +1,7 @@
 # Vorani Conceito
 
-Site institucional da loja Vorani Conceito (Av. Braz Leme, 1335 - Casa Verde, São Paulo).
+Site da loja Vorani Conceito (Av. Braz Leme, 1335 - Casa Verde, São Paulo).
 
-Créditos das imagens: foto de abertura por Shixart1985 (CC BY 2.0, Wikimedia Commons); fotos de ambientes de rawpixel (CC0). Imagens ilustrativas.
+Gerado por `business/site-vorani-conceito/v3/build.cjs` no repositório vorani-planejados. Não editar à mão.
+
+Imagens de ambientes: showroom Italínea (material do portal Conexão Italínea para lojistas). Dados da fábrica: italinea.com.br.

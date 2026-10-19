@@ -3,390 +3,360 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="img/logo-vorani.jpeg">
-<style>body{margin:0}img{max-width:100%}</style>
-<title>Vorani Conceito</title>
-<meta name="description" content="Vorani Conceito — móveis planejados na Casa Verde, São Paulo. Projetos com designers de interiores, fabricação Italínea e 5 anos de garantia.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400&display=swap">
-<style>
-/* Layout: showroom em faixas — marfim do Guia de Marca, uma faixa grafite para os números, desenho técnico de cozinha como assinatura. Marca de visual único (claro) por escolha. */
-:root {
-  --ivory: #efeae4;
-  --paper: #f7f4ef;
-  --brown: #4a3a2a;
-  --graphite: #2e2e2e;
-  --gold: #b89b6a;
-  --gold-ink: #8a6e42;
-  --muted: #6e6152;
-  --line: rgba(74, 58, 42, .18);
-  --on-dark: #efeae4;
-  --on-dark-muted: #bfb5a8;
-  --display: "Playfair Display", "Didot", Georgia, serif;
-  --body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  --step-0: 1rem;
-  --step-1: 1.25rem;
-  --step-2: 1.75rem;
-  --step-3: clamp(2rem, 4vw, 2.75rem);
-  --step-4: clamp(2.5rem, 6.2vw, 4.5rem);
-  color-scheme: light;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body {
-  background: var(--ivory);
-  color: var(--graphite);
-  font-family: var(--body);
-  font-size: var(--step-0);
-  line-height: 1.65;
-  font-weight: 400;
-}
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ivory); }
-a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-ink); outline-offset: 3px; }
-h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--brown); text-wrap: balance; margin: 0; line-height: 1.12; }
-p { margin: 0; }
-.wrap {
-  max-width: 1180px;
-  margin-inline: auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-@media (min-width: 720px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
-.eyebrow {
-  font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 500; color: var(--gold-ink);
-  display: flex; align-items: center; gap: 14px;
-}
-.eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); flex: none; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  font-family: var(--body); font-size: .78rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
-  text-decoration: none; padding: 16px 28px; border: 1px solid var(--brown); transition: background .25s, color .25s;
-}
-.btn-solid { background: var(--brown); color: var(--ivory); }
-.btn-solid:hover { background: var(--graphite); border-color: var(--graphite); }
-.btn-ghost { color: var(--brown); }
-.btn-ghost:hover { background: var(--brown); color: var(--ivory); }
-
-/* Cabeçalho */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(239, 234, 228, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 10px; }
-/* Recorte do logo (arquivo 1563x1563; a marca ocupa x 225-1190, y 690-950) */
-.logo { display: block; position: relative; width: 168px; aspect-ratio: 965 / 260; overflow: hidden; flex: none; }
-.logo img { position: absolute; max-width: none; width: 161.97%; left: -23.32%; top: -265.4%; mix-blend-mode: multiply; }
-.nav { display: flex; align-items: center; gap: 28px; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; }
-.nav a { text-decoration: none; color: var(--brown); }
-.nav a:hover { color: var(--gold-ink); }
-.nav .btn { padding: 11px 18px; font-size: .7rem; }
-@media (max-width: 860px) { .nav a:not(.btn) { display: none; } }
-
-/* Abertura com foto */
-.hero { position: relative; overflow: hidden; background: var(--graphite); color: var(--on-dark); }
-.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; animation: settle 2.4s ease-out both; }
-@keyframes settle { from { transform: scale(1.06); } to { transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) { .hero-photo { animation: none; } }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(36, 28, 20, .88) 0%, rgba(36, 28, 20, .62) 45%, rgba(36, 28, 20, .08) 100%); }
-.hero .wrap { position: relative; z-index: 1; padding-block: clamp(96px, 14vw, 168px) clamp(80px, 11vw, 136px); }
-.hero-copy { display: grid; gap: 28px; max-width: 620px; min-width: 0; }
-.hero .eyebrow { color: var(--gold); }
-.hero h1 { font-size: var(--step-4); letter-spacing: -.01em; color: var(--on-dark); }
-.hero h1 em { font-style: italic; color: var(--gold); }
-.hero .lede { font-size: 1.06rem; color: #ddd4c8; max-width: 34em; font-weight: 300; }
-.hero .lede strong { font-weight: 500; color: var(--on-dark); }
-.hero .btn-solid { background: var(--gold); border-color: var(--gold); color: var(--graphite); }
-.hero .btn-solid:hover { background: var(--ivory); border-color: var(--ivory); }
-.hero .btn-ghost { color: var(--on-dark); border-color: rgba(239, 234, 228, .55); }
-.hero .btn-ghost:hover { background: var(--on-dark); color: var(--brown); }
-.hero-note { position: absolute; z-index: 1; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 14px; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(239, 234, 228, .6); }
-.ctas { display: flex; flex-wrap: wrap; gap: 14px; }
-@media (max-width: 720px) { .hero::after { background: linear-gradient(180deg, rgba(36, 28, 20, .55) 0%, rgba(36, 28, 20, .86) 70%); } }
-
-/* Números */
-.numbers { background: var(--graphite); color: var(--on-dark); }
-.numbers .wrap { display: grid; grid-template-columns: repeat(4, 1fr); padding-block: 56px; }
-.num { display: grid; gap: 8px; padding-inline: 28px; border-left: 1px solid rgba(184, 155, 106, .35); }
-.num:first-child { border-left: 0; padding-left: 0; }
-.num b { font-family: var(--display); font-weight: 400; font-size: clamp(2.4rem, 4.6vw, 3.4rem); line-height: 1; color: var(--gold); font-variant-numeric: lining-nums; }
-.num span { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-muted); }
-@media (max-width: 760px) {
-  .numbers .wrap { grid-template-columns: 1fr 1fr; row-gap: 36px; }
-  .num { padding-inline: 20px; }
-  .num:nth-child(odd) { border-left: 0; padding-left: 0; }
-}
-
-/* Seções */
-section.block .wrap { padding-block: 96px; }
-.head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
-.head h2 { font-size: var(--step-3); }
-.head p { color: var(--muted); font-weight: 300; max-width: 32em; }
-.head > div { display: grid; gap: 18px; min-width: 0; }
-@media (max-width: 820px) { .head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; } section.block .wrap { padding-block: 72px; } }
-
-/* Diferenciais */
-.diffs { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-.diff { display: grid; gap: 14px; align-content: start; padding: 36px 32px 40px 0; border-bottom: 1px solid var(--line); min-width: 0; }
-.diff + .diff { padding-left: 32px; border-left: 1px solid var(--line); }
-.diff:nth-child(3n+1) { padding-left: 0; border-left: 0; }
-.diff svg { width: 30px; height: 30px; stroke: var(--gold-ink); fill: none; stroke-width: 1.2; }
-.diff h3 { font-size: var(--step-1); }
-.diff p { color: var(--muted); font-size: .95rem; font-weight: 300; }
-@media (max-width: 900px) {
-  .diffs { grid-template-columns: 1fr 1fr; }
-  .diff, .diff + .diff { padding: 30px 24px 32px 0; border-left: 0; }
-  .diff:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
-}
-@media (max-width: 560px) {
-  .diffs { grid-template-columns: 1fr; }
-  .diff:nth-child(even) { padding-left: 0; border-left: 0; }
-}
-
-/* Processo */
-.process { background: var(--paper); border-block: 1px solid var(--line); }
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; counter-reset: step; }
-.steps li { counter-increment: step; display: grid; grid-template-columns: 56px 1fr; gap: 4px 16px; padding: 22px 0; border-top: 1px solid var(--line); min-width: 0; }
-.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--display); font-size: 1.6rem; line-height: 1; color: var(--gold); grid-row: span 2; }
-.steps b { font-weight: 500; color: var(--brown); }
-.steps span { color: var(--muted); font-size: .9rem; font-weight: 300; }
-@media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
-.process-note { margin-top: 40px; font-family: var(--display); font-style: italic; font-size: var(--step-1); color: var(--brown); }
-
-/* Moodboard */
-.mood .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
-.mood-copy { display: grid; gap: 22px; min-width: 0; }
-.mood-copy h2 { font-size: var(--step-3); }
-.mood-copy p { color: var(--muted); font-weight: 300; }
-.board { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 120px 120px 90px; gap: 10px; }
-.board > div { position: relative; }
-.board small { position: absolute; left: 12px; bottom: 10px; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
-.sw-1 { grid-column: 1 / 4; grid-row: 1 / 3; background: var(--brown); color: var(--on-dark); }
-.sw-2 { grid-column: 4 / 7; background: var(--ivory); border: 1px solid var(--line); color: var(--brown); }
-.sw-3 { grid-column: 4 / 6; background: var(--gold); color: var(--graphite); }
-.sw-4 { grid-column: 6 / 7; background: var(--graphite); color: var(--on-dark); }
-.sw-5 { grid-column: 1 / 7; background: repeating-linear-gradient(90deg, #8b6b4a 0 3px, #9a7a57 3px 7px, #7e6043 7px 9px, #a3825e 9px 15px); color: var(--on-dark); }
-@media (max-width: 860px) { .mood .wrap { grid-template-columns: 1fr; gap: 40px; } }
-
-/* Ambientes */
-.rooms { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: repeat(3, 180px); gap: 14px; }
-.room { position: relative; overflow: hidden; background: var(--paper); border: 1px solid var(--line); display: flex; align-items: flex-end; padding: 22px; min-width: 0; }
-.room:first-child { grid-row: span 3; }
-.room img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.room .tag { position: relative; display: grid; gap: 2px; background: var(--ivory); padding: 12px 16px; }
-.room .tag b { font-family: var(--display); font-weight: 400; font-size: 1.2rem; color: var(--brown); }
-.room .tag span { font-size: .78rem; color: var(--muted); }
-.rooms-note { margin-top: 14px; font-size: .72rem; color: var(--muted); }
-.room { margin: 0; }
-.room .ph { position: absolute; inset: 0; display: grid; place-items: center; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(184, 155, 106, .12) 14px 15px); }
-@media (max-width: 720px) { .rooms { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 220px; } .room:first-child { grid-row: auto; } }
-
-/* Visite */
-.visit { background: var(--brown); color: var(--on-dark); }
-.visit .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; padding-block: 96px; }
-.visit h2 { color: var(--on-dark); font-size: var(--step-4); }
-.visit h2 em { color: var(--gold); }
-.visit .eyebrow { color: var(--gold); }
-.visit-copy { display: grid; gap: 26px; align-content: start; min-width: 0; }
-.visit-copy p { color: var(--on-dark-muted); font-weight: 300; max-width: 30em; }
-.card { border: 1px solid rgba(184, 155, 106, .45); padding: 34px; display: grid; gap: 26px; align-content: start; min-width: 0; }
-.card dl { margin: 0; display: grid; gap: 20px; }
-.card dt { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.card dd { margin: 0; font-size: 1.02rem; overflow-wrap: anywhere; }
-.card dd a { text-decoration: none; border-bottom: 1px solid rgba(184, 155, 106, .5); }
-.card dd a:hover { color: var(--gold); }
-.visit .btn-solid { background: var(--gold); border-color: var(--gold); color: var(--graphite); }
-.visit .btn-solid:hover { background: var(--ivory); border-color: var(--ivory); }
-.visit .btn-ghost { color: var(--on-dark); border-color: rgba(239, 234, 228, .5); }
-.visit .btn-ghost:hover { background: var(--on-dark); color: var(--brown); }
-@media (max-width: 860px) { .visit .wrap { grid-template-columns: 1fr; gap: 44px; padding-block: 72px; } .card { padding: 26px; } }
-
-/* Rodapé */
-.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-block: 36px; font-size: .78rem; color: var(--muted); }
-.foot .logo { width: 132px; }
-.foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
-.foot a { text-decoration: none; }
-.foot .credit { flex-basis: 100%; order: 9; font-size: .68rem; opacity: .85; }
-.foot a:hover { color: var(--brown); }
-</style>
+<title>Vorani Conceito | Móveis Planejados Italínea na Casa Verde, SP</title>
+<meta name="description" content="Loja conceito de móveis planejados Italínea na Casa Verde, Zona Norte de São Paulo. Projeto com designers de interiores, moodboard exclusivo e 5 anos de garantia.">
+<link rel="canonical" href="https://voraniconceito.com.br/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#2e2e2e">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self' https://wa.me https://api.whatsapp.com; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Vorani Conceito">
+<meta property="og:title" content="Vorani Conceito | Móveis planejados Italínea em São Paulo">
+<meta property="og:description" content="Projeto com designers de interiores, fabricação Italínea e 5 anos de garantia. Av. Braz Leme, 1335 - Casa Verde.">
+<meta property="og:url" content="https://voraniconceito.com.br/">
+<meta property="og:image" content="https://voraniconceito.com.br/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ambiente planejado com adega e biblioteca iluminada">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/avif" media="(max-width: 700px)" imagesrcset="img/hero-m-480.avif 480w, img/hero-m-720.avif 720w, img/hero-m-960.avif 960w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width: 701px)" imagesrcset="img/hero-640.avif 640w, img/hero-820.avif 820w, img/hero-1080.avif 1080w, img/hero-1440.avif 1440w, img/hero-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<style>@font-face{font-family:"Montserrat";src:url(fonts/montserrat.woff2) format("woff2");font-weight:300 600;font-style:normal;font-display:swap}@font-face{font-family:"Playfair Display";src:url(fonts/playfair.woff2) format("woff2");font-weight:400 800;font-style:normal;font-display:swap}@font-face{font-family:"Playfair Display";src:url(fonts/playfair-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}:root{--creme:#efeae4;--dourado:#b89b6a;--marrom:#4a3a2a;--grafite:#2e2e2e;--surface:var(--creme);--surface-raised:#f7f4f0;--surface-dark:var(--grafite);--surface-warm:var(--marrom);--ink:var(--grafite);--ink-muted:#5c544b;--on-dark:var(--creme);--on-dark-muted:#bdb3a6;--gold:var(--dourado);--gold-text:#7a6038;--gold-on-dark:#c9ae7f;--on-gold:var(--grafite);--line:#d9d0c4;--field-border:#857a6d;--line-on-dark:#5a5550;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:96px;--container:1180px;--r-control:5px;--r-lg:32px;--r-sm:4px;--shadow-lift:0 18px 40px rgba(74,58,42,.16);--display:"Playfair Display",Georgia,"Times New Roman",serif;--sans:"Montserrat","Helvetica Neue",Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);--nav-h:76px;color-scheme:light}*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);-webkit-text-size-adjust:100%}body{margin:0;background:var(--surface);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}img{max-width:100%;height:auto;display:block}picture{display:block}a{color:inherit}h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}p{margin:0;text-wrap:pretty}:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px}.dark:focus-visible,.hero:focus-visible{outline-color:var(--gold-on-dark)}.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--grafite);color:var(--creme);padding:10px 16px;border-radius:var(--r-control)}.skip:focus{left:12px}.wrap{width:100%;max-width:var(--container);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}.sec{padding-block:var(--space-8)}@media (max-width:700px){.sec{padding-block:64px}}.eyebrow{display:block;font:600 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text)}.dark .eyebrow,.hero .eyebrow{color:var(--gold-on-dark)}.title{font:300 clamp(1.45rem,2.6vw,1.85rem)/1.25 var(--sans);letter-spacing:.14em;text-transform:uppercase}.rule{display:block;width:72px;height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}.head{display:grid;gap:var(--space-4);max-width:680px;margin-bottom:var(--space-7)}.head.center{margin-inline:auto;text-align:center;justify-items:center}.lead{font-size:1.075rem;color:var(--ink-muted);max-width:62ch}.dark .lead{color:var(--on-dark-muted)}.quote{font:italic 400 clamp(1.5rem,3vw,2.2rem)/1.25 var(--display);color:var(--marrom)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:var(--r-control);border:1px solid transparent;font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease)}.btn svg{width:18px;height:18px;flex:none}.btn-gold{background:var(--gold);color:var(--on-gold)}.btn-gold:hover{background:#c9ae7f;transform:translateY(-1px)}.btn-dark{background:var(--grafite);color:var(--creme)}.btn-dark:hover{background:var(--marrom)}.btn-ghost{border-color:rgba(239,234,228,.6);color:var(--creme)}.btn-ghost:hover{background:rgba(239,234,228,.12);border-color:var(--creme)}.btn-line{border-color:var(--grafite);color:var(--grafite)}.btn-line:hover{background:var(--grafite);color:var(--creme)}.nav{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(46,46,46,.06)}.nav-in{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);height:var(--nav-h)}.nav-logo img{height:56px;width:auto}@media (max-width:520px){.nav-logo img{height:46px}}.nav-list{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.nav-list a:not(.btn){position:relative;font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:8px 0}.nav-list a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}.nav-list a:not(.btn):hover::after{transform:scaleX(1)}.nav .btn{min-height:42px;padding:0 18px;font-size:12px}.nav-toggle{display:none;width:46px;height:46px;border:0;background:none;cursor:pointer;padding:11px;color:var(--grafite)}.nav-toggle span{display:block;height:1.5px;background:currentColor;margin:6px 0;transition:transform .3s,opacity .3s}@media (max-width:960px){.nav-toggle{display:block}.nav-list{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--grafite);color:var(--creme);padding:12px max(20px,env(safe-area-inset-right,0px)) 28px max(20px,env(safe-area-inset-left,0px));transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s}.nav-list a:not(.btn){display:block;padding:18px 0;border-bottom:1px solid var(--line-on-dark);font-size:13px}.nav-list li:last-child{padding-top:20px}.nav-list .btn{width:100%}.nav.open .nav-list{opacity:1;transform:none;visibility:visible}.nav.open .nav-toggle span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}.nav.open .nav-toggle span:nth-child(2){opacity:0}.nav.open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}}.hero{position:relative;min-height:clamp(560px,calc(92svh - var(--nav-h)),860px);display:grid;align-items:end;color:var(--on-dark);overflow:hidden;background:var(--grafite)}.hero-img,.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}@media (min-width:861px){.hero-img img{animation:zoom 14s var(--ease) both}}@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,28,26,.88) 0%,rgba(30,28,26,.55) 38%,rgba(30,28,26,.08) 75%)}.hero-in{position:relative;z-index:1;display:grid;gap:var(--space-5);padding-block:72px 64px;max-width:820px;margin-left:0}.hero h1{font:400 clamp(2.3rem,5.4vw,4.3rem)/1.06 var(--display);letter-spacing:-.01em}.hero h1 em{font-style:italic;color:var(--gold-on-dark)}.hero p{font-size:clamp(1rem,1.6vw,1.15rem);color:#ddd5ca;max-width:56ch}.hero-cta{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-2)}.hero-tag{position:absolute;z-index:1;right:max(20px,env(safe-area-inset-right,0px));bottom:24px;font:500 11px/1.4 var(--sans);letter-spacing:.1em;color:rgba(239,234,228,.7)}@media (max-width:700px){.hero-tag{display:none}.hero-cta .btn{flex:1 1 100%}.hero::after{background:linear-gradient(to top,rgba(30,28,26,.92) 0%,rgba(30,28,26,.72) 55%,rgba(30,28,26,.4) 100%)}}.proof{background:var(--surface-raised);border-bottom:1px solid var(--line)}.proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}.proof li{display:grid;gap:6px;padding:36px 24px;text-align:center;border-left:1px solid var(--line)}.proof li:first-child{border-left:0}.proof b{font:800 clamp(2rem,3.6vw,2.9rem)/1 var(--display);color:var(--gold-text);font-variant-numeric:lining-nums}.proof span{font:600 11.5px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}@media (max-width:760px){.proof ul{grid-template-columns:1fr 1fr}.proof li:nth-child(3){border-left:0}.proof li:nth-child(n+3){border-top:1px solid var(--line)}.proof li{padding:28px 12px}}.concept{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}.concept-text{display:grid;gap:var(--space-5);min-width:0}.concept-photos{position:relative;padding-bottom:18%;min-width:0}.concept-photos .p1 img{aspect-ratio:4 / 3;object-fit:cover;width:100%}.concept-photos .p2{position:absolute;right:-4%;bottom:0;width:52%;border:8px solid var(--surface)}.concept-photos .p2 img{aspect-ratio:1;object-fit:cover;width:100%}.moods{display:flex;flex-wrap:wrap;gap:8px}.moods span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font:500 12.5px/1 var(--sans);color:var(--ink-muted);background:var(--surface-raised)}.moods i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(46,46,46,.15)}@media (max-width:900px){.concept{grid-template-columns:1fr}.concept-photos .p2{right:0}}.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:var(--space-6);scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filters button{flex:none;min-height:42px;padding:0 18px;border:1px solid var(--field-border);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;font:600 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}.filters button:hover{border-color:var(--grafite)}.filters button[aria-pressed="true"]{background:var(--grafite);border-color:var(--grafite);color:var(--creme)}.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,230px);grid-auto-flow:dense;gap:12px}.tile{position:relative;overflow:hidden;padding:0;border:0;background:#ddd5ca;cursor:zoom-in;display:block;text-align:left;color:var(--creme)}.tile.wide{grid-column:span 2}.tile.tall{grid-row:span 2}.tile.big{grid-column:span 2;grid-row:span 2}.tile picture,.tile img{width:100%;height:100%}.tile img{object-fit:cover;transition:transform .8s var(--ease)}.tile:hover img{transform:scale(1.05)}.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(to top,rgba(30,28,26,.78),transparent);font:600 11.5px/1.35 var(--sans);letter-spacing:.12em;text-transform:uppercase}.tile[hidden]{display:none}.gallery-note{margin-top:var(--space-5);font-size:13px;color:var(--ink-muted)}@media (max-width:860px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw}.tile.big{grid-row:span 1}}@media (max-width:480px){.gallery{gap:8px}}.lb{border:0;padding:0;margin:0;width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;background:rgba(24,23,22,.96);color:var(--creme)}.lb::backdrop{background:rgba(24,23,22,.9)}.lb-in{position:relative;width:100%;height:100%;display:grid;grid-template-rows:1fr auto;padding:56px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px))}.lb picture{display:grid;place-items:center;min-height:0}.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}.lb p{text-align:center;padding-top:14px;font:500 13px/1.4 var(--sans);letter-spacing:.08em;color:var(--on-dark-muted)}.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(239,234,228,.35);background:rgba(46,46,46,.6);color:var(--creme);cursor:pointer;display:grid;place-items:center}.lb button:hover{border-color:var(--gold-on-dark)}.lb button svg{width:20px;height:20px}.lb .lb-x{top:max(10px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}.lb .lb-prev{left:max(12px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}.lb .lb-next{right:max(12px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}.dark{background:var(--surface-dark);color:var(--on-dark)}.factory{position:relative;overflow:hidden}.factory .wrap{position:relative}.factory h2{font:400 clamp(2rem,4.4vw,3.4rem)/1.1 var(--display)}.factory h2 em{color:var(--gold-on-dark)}.fab-grid{display:grid;margin:0 0 56px;height:clamp(300px,44vw,580px)}.fab-grid figure{position:relative;margin:0;overflow:hidden;min-width:0}.fab-grid picture,.fab-grid img{width:100%;height:100%;object-fit:cover}.fab-grid img{transition:transform 1.2s var(--ease)}.fab-grid figure:hover img{transform:scale(1.04)}.fab-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 16px;background:linear-gradient(to top,rgba(30,28,26,.82),transparent);font:600 11.5px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--creme)}@media (max-width:760px){.fab-grid{height:auto;margin-bottom:40px}.fab-grid figure{aspect-ratio:4 / 3}}.big-num{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:8px 28px;padding:40px 0;margin:0 0 40px;border-top:1px solid var(--line-on-dark);border-bottom:1px solid var(--line-on-dark)}.big-num b{font:800 clamp(4.2rem,13vw,10rem)/.85 var(--display);color:var(--gold-on-dark);letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}.big-num b small{font-size:.38em;font-weight:400;letter-spacing:0;margin-left:6px}.big-num p{font-size:1.05rem;color:var(--on-dark-muted);max-width:40ch;padding-bottom:10px}.big-num p strong{display:block;color:var(--creme);font:600 13px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}@media (max-width:700px){.big-num{grid-template-columns:1fr}}.nums{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0}.nums li{display:grid;gap:8px;padding:6px 20px;border-left:1px solid var(--line-on-dark)}.nums li:first-child{padding-left:0;border-left:0}.nums b{white-space:nowrap;font:600 clamp(1.45rem,2.2vw,2.05rem)/1 var(--display);color:var(--creme);font-variant-numeric:lining-nums tabular-nums}.nums span{font-size:13.5px;line-height:1.45;color:var(--on-dark-muted)}@media (max-width:960px){.nums{grid-template-columns:repeat(2,1fr);gap:28px 0}.nums li:nth-child(odd){padding-left:0;border-left:0}.nums li:last-child{grid-column:span 2}}.timeline{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}.timeline::before{content:"";position:absolute;left:0;right:0;top:7px;height:5px;border-top:1px solid var(--gold-on-dark);border-bottom:1px solid var(--gold-on-dark);opacity:.55}.timeline li{position:relative;padding:30px 18px 0 0;display:grid;gap:6px}.timeline li::before{content:"";position:absolute;top:2px;left:0;width:15px;height:15px;border-radius:50%;background:var(--grafite);border:2px solid var(--gold-on-dark)}.timeline b{font:400 1.5rem/1 var(--display);color:var(--gold-on-dark)}.timeline span{font-size:13.5px;color:var(--on-dark-muted);line-height:1.5}@media (max-width:860px){.timeline{grid-template-columns:1fr;gap:26px;padding-left:30px}.timeline::before{left:5px;right:auto;top:0;bottom:0;width:5px;height:auto;border:0;border-left:1px solid var(--gold-on-dark);border-right:1px solid var(--gold-on-dark)}.timeline li{padding:0}.timeline li::before{left:-30px}}.factory-foot{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:24px 56px;align-items:start}.factory-foot p{color:var(--on-dark-muted);font-size:15px}.factory-foot p strong{color:var(--creme);font-weight:600}.source{font-size:12px !important;color:#8f877e !important}.source a{color:inherit}@media (max-width:760px){.factory-foot{grid-template-columns:1fr}}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{display:grid;align-content:start;gap:12px;padding:30px 28px 32px;background:var(--surface-raised);border-top:3px solid var(--gold);border-radius:var(--r-lg) var(--r-sm) var(--r-lg) var(--r-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}.card svg{width:30px;height:30px;color:var(--gold-text)}.card h3{font:600 1.08rem/1.35 var(--sans)}.card p{color:var(--ink-muted);font-size:15px}@media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}@media (max-width:600px){.cards{grid-template-columns:1fr}}.life{display:grid;grid-template-columns:1.3fr 1fr;background:var(--surface-warm);color:var(--on-dark)}.life picture{height:clamp(420px,46vw,640px)}.life img{width:100%;height:100%;object-fit:cover}.life-text{display:grid;align-content:center;gap:22px;padding:clamp(40px,6vw,88px)}.life-text .quote{color:var(--creme)}.life-text p{color:#d8ccbd}@media (max-width:860px){.life{grid-template-columns:1fr}.life picture{height:auto;aspect-ratio:4 / 3}}.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:step;border-top:1px solid var(--line)}.steps li{counter-increment:step;display:grid;align-content:start;align-items:start;grid-template-columns:auto 1fr;gap:4px 18px;padding:28px 28px 28px 0;border-bottom:1px solid var(--line)}.steps li::before{content:counter(step,decimal-leading-zero);grid-row:span 2;font:400 2rem/1 var(--display);color:var(--gold-text);min-width:2.2ch}.steps h3{font:600 1rem/1.35 var(--sans)}.steps p{font-size:14.5px;color:var(--ink-muted)}@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}@media (max-width:560px){.steps{grid-template-columns:1fr}}.steps-end{margin-top:var(--space-6)}.details{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.details figure{margin:0;display:grid;align-content:start;gap:12px;min-width:0}.details .ph{overflow:hidden}.details img{aspect-ratio:3 / 4;object-fit:cover;width:100%;transition:transform .8s var(--ease)}.details figure:hover img{transform:scale(1.04)}.details figcaption{font-size:14px;color:var(--ink-muted)}.details figcaption b{display:block;font:600 12px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:2px}@media (max-width:860px){.details{grid-template-columns:1fr 1fr}}.quote-sec{background:linear-gradient(135deg,var(--surface-dark),var(--surface-warm));color:var(--on-dark)}.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:start}.quote-grid h2{font:400 clamp(2rem,4vw,3rem)/1.1 var(--display);font-style:italic}.quote-side{display:grid;gap:20px;min-width:0}.quote-side ul{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:12px;color:var(--on-dark-muted);font-size:15px}.quote-side li{display:flex;gap:12px;align-items:baseline}.quote-side li::before{content:"";flex:none;width:14px;height:5px;border-top:1px solid var(--gold-on-dark);border-bottom:1px solid var(--gold-on-dark);transform:translateY(-3px)}form{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:rgba(239,234,228,.05);border:1px solid rgba(239,234,228,.14);padding:clamp(22px,4vw,36px);border-radius:var(--r-lg) var(--r-sm) var(--r-lg) var(--r-sm);min-width:0}.f{display:grid;gap:8px;min-width:0}.f.full{grid-column:1 / -1}.f label,.f legend{font:600 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);padding:0}.f input,.f textarea{width:100%;min-height:50px;padding:12px 14px;border:1px solid transparent;border-radius:var(--r-control);background:var(--creme);color:var(--grafite);font:400 16px/1.4 var(--sans)}.f textarea{min-height:104px;resize:vertical}.f input:focus,.f textarea:focus{outline:2px solid var(--gold-on-dark);outline-offset:2px}fieldset.f{border:0;margin:0;padding:0}.chips{display:flex;flex-wrap:wrap;gap:8px}.chips label{position:relative;cursor:pointer}.chips input{position:absolute;opacity:0;width:1px;height:1px}.chips span{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;border:1px solid rgba(239,234,228,.4);border-radius:999px;font:500 13px/1 var(--sans);letter-spacing:.02em;color:var(--creme);text-transform:none;transition:background .25s,color .25s,border-color .25s}.chips input:checked + span{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}.chips input:focus-visible + span{outline:2px solid var(--gold-on-dark);outline-offset:2px}.form-end{grid-column:1 / -1;display:grid;gap:12px}.form-end .btn{width:100%}.form-msg{font-size:14px;color:#f0b9ab;min-height:1.4em}.form-note{font-size:12.5px;color:var(--on-dark-muted)}@media (max-width:860px){.quote-grid{grid-template-columns:1fr}}@media (max-width:520px){form{grid-template-columns:1fr}}.faq{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}.faq details{border-bottom:1px solid var(--line)}.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font:600 1.02rem/1.4 var(--sans)}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"";flex:none;width:12px;height:12px;border-right:1.5px solid var(--gold-text);border-bottom:1.5px solid var(--gold-text);transform:rotate(45deg) translateY(-4px);transition:transform .3s var(--ease)}.faq details[open] summary::after{transform:rotate(-135deg) translateY(-2px)}.faq details p{padding:0 0 24px;color:var(--ink-muted);max-width:68ch}.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}.visit-card{display:grid;gap:22px;padding:clamp(28px,4vw,44px);background:var(--surface-raised);border-top:3px solid var(--gold);border-radius:var(--r-lg) var(--r-sm) var(--r-lg) var(--r-sm);min-width:0}.visit-card dl{margin:0;display:grid;gap:18px}.visit-card dt{font:600 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin-bottom:4px}.visit-card dd{margin:0;font-size:15.5px;overflow-wrap:anywhere}.visit-card dd a{text-decoration-color:var(--gold);text-underline-offset:3px}.visit-btns{display:flex;flex-wrap:wrap;gap:10px}.visit-photo img{aspect-ratio:4 / 5;object-fit:cover;width:100%}.stores{font-size:14px;color:var(--ink-muted)}@media (max-width:860px){.visit{grid-template-columns:1fr}.visit-photo{order:-1}.visit-photo img{aspect-ratio:16 / 10}.visit-btns .btn{flex:1 1 100%}}.foot{background:var(--grafite);color:var(--on-dark-muted);font-size:14px}.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-block:64px 48px}.foot-grid>div{display:grid;align-content:start;gap:10px;min-width:0}.foot h3{font:600 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-on-dark);margin-bottom:4px}.foot a{text-decoration:none;color:var(--creme)}.foot a:hover{text-decoration:underline;text-decoration-color:var(--gold-on-dark)}.foot-logo{display:block;width:max-content;max-width:100%;margin-bottom:6px}.foot-logo img{height:56px;width:auto}.foot-bar{background:var(--marrom);color:#cfc2b2;font-size:12.5px}.foot-bar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-block:18px}@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}.wa{position:fixed;z-index:40;right:max(18px,calc(env(safe-area-inset-right,0px) + 12px));bottom:max(18px,calc(env(safe-area-inset-bottom,0px) + 12px));display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 22px 0 8px;background:var(--grafite);color:var(--creme);border-radius:999px;text-decoration:none;box-shadow:0 12px 30px rgba(30,28,26,.28);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;transition:transform .3s var(--ease)}.wa:hover{transform:translateY(-2px)}.wa i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--grafite)}.wa svg{width:22px;height:22px}@media (max-width:520px){.wa{padding:0 7px}.wa em{display:none}}.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}.rv.pre{opacity:0;transform:translateY(22px)}.rv.in{opacity:1;transform:none}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none !important;transition:none !important}.rv.pre{opacity:1;transform:none}}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FurnitureStore","@id":"https://voraniconceito.com.br/#loja","name":"Vorani Conceito","alternateName":"Vorani Planejados - Loja Braz Leme","description":"Loja conceito de móveis planejados Italínea na Casa Verde, São Paulo. Projeto com designers de interiores, moodboard exclusivo e 5 anos de garantia.","url":"https://voraniconceito.com.br/","image":"https://voraniconceito.com.br/img/og.jpg","logo":"https://voraniconceito.com.br/img/logo.png","telephone":"+55-11-2538-1890","email":"adm@voraniplanejados.com.br","address":{"@type":"PostalAddress","streetAddress":"Av. Braz Leme, 1335 - Casa Verde","addressLocality":"São Paulo","addressRegion":"SP","postalCode":"02511-000","addressCountry":"BR"},"areaServed":{"@type":"City","name":"São Paulo"},"brand":{"@type":"Brand","name":"Italínea"},"foundingDate":"2018","hasMap":"https://www.google.com/maps/search/?api=1&query=Av.%20Braz%20Leme%2C%201335%20-%20Casa%20Verde%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002511-000","sameAs":["https://www.instagram.com/voraniconceitoitalinea/","https://www.tiktok.com/@voraniplanejados","https://voraniplanejados.com.br/"]},{"@type":"WebSite","@id":"https://voraniconceito.com.br/#site","url":"https://voraniconceito.com.br/","name":"Vorani Conceito","inLanguage":"pt-BR","publisher":{"@id":"https://voraniconceito.com.br/#loja"}},{"@type":"FAQPage","@id":"https://voraniconceito.com.br/#duvidas","mainEntity":[{"@type":"Question","name":"Quem fabrica os móveis da Vorani?","acceptedAnswer":{"@type":"Answer","text":"A Italínea, em Bento Gonçalves (RS). Ela é a maior rede de lojas de móveis planejados da América Latina e tem um parque fabril de 125 mil m²."}},{"@type":"Question","name":"Qual é a garantia dos móveis?","acceptedAnswer":{"@type":"Answer","text":"Os móveis têm 5 anos de garantia, com fabricação Italínea e uma equipe de pós-venda dedicada."}},{"@type":"Question","name":"Como funciona o projeto?","acceptedAnswer":{"@type":"Answer","text":"Você conversa com um projetista designer de interiores na loja. Ele monta um moodboard exclusivo com cores, materiais e acabamentos, mede cada parede no seu imóvel e entrega o projeto executivo detalhado peça por peça."}},{"@type":"Question","name":"Consigo acompanhar o meu pedido?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você acompanha o pedido em tempo real pelo aplicativo, da fabricação à montagem."}},{"@type":"Question","name":"Quais formas de pagamento vocês oferecem?","acceptedAnswer":{"@type":"Answer","text":"A Vorani tem financeira própria, com condições pensadas para o projeto caber no seu planejamento. As condições são combinadas direto com o gerente na loja."}},{"@type":"Question","name":"Quais ambientes vocês projetam?","acceptedAnswer":{"@type":"Answer","text":"Cozinhas, livings, dormitórios, closets, banheiros, home office, lavanderias, espaços gourmet e espaços comerciais, em apartamentos e casas."}},{"@type":"Question","name":"O material é seguro para a minha família?","acceptedAnswer":{"@type":"Answer","text":"A Italínea usa MDP e MDF E1, de baixa emissão de formaldeído, feito com madeira de florestas plantadas."}},{"@type":"Question","name":"Onde fica a loja?","acceptedAnswer":{"@type":"Answer","text":"A Vorani Conceito fica na Av. Braz Leme, 1335, Casa Verde, São Paulo (SP), CEP 02511-000. A Vorani também tem lojas na Penha e no Imirim."}}]}]}</script>
+<script src="app.js" defer></script>
 </head>
 <body>
-
-
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="Vorani Planejados — início"><img src="img/logo-vorani.jpeg" alt="Vorani Planejados"></a>
-    <nav class="nav" aria-label="Seções">
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#processo">Processo</a>
-      <a href="#ambientes">Ambientes</a>
-      <a href="#visite">Visite</a>
-      <a class="btn btn-solid" href="https://wa.me/551125381890?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20na%20Vorani%20Conceito." target="_blank" rel="noopener">Agendar visita</a>
-    </nav>
-  </div>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="nav" id="topo">
+<div class="wrap nav-in">
+<a class="nav-logo" href="#topo" aria-label="Vorani Conceito, voltar ao início">
+<img src="img/logo.svg" width="358" height="117" alt="Vorani Conceito">
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav aria-label="Principal">
+<ul class="nav-list" id="menu">
+<li><a href="#ambientes">Ambientes</a></li>
+<li><a href="#fabrica">A fábrica</a></li>
+<li><a href="#como-funciona">Como funciona</a></li>
+<li><a href="#duvidas">Dúvidas</a></li>
+<li><a href="#visite">Visite</a></li>
+<li><a class="btn btn-dark" href="#orcamento">Quero meu projeto</a></li>
+</ul>
+</nav>
+</div>
 </header>
-
-<main id="inicio">
-  <section class="hero">
-    <img class="hero-photo" src="img/hero-cozinha.jpg" alt="Cozinha planejada com painel ripado de madeira, bancada marmorizada e iluminação embutida">
-    <div class="wrap">
-      <div class="hero-copy">
-        <p class="eyebrow">Vorani Conceito · Casa Verde, São Paulo</p>
-        <h1>Móveis planejados pensados em <em>cada detalhe</em> da sua casa.</h1>
-        <p class="lede">Há 8 anos a Vorani desenha ambientes elegantes e atemporais. Cada projeto nasce na loja, com <strong>projetistas designers de interiores</strong>, e é fabricado pela <strong>Italínea</strong>. Depois da entrega, a gente continua por perto, com <strong>5 anos de garantia</strong>.</p>
-        <div class="ctas">
-          <a class="btn btn-solid" href="https://wa.me/551125381890?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20na%20Vorani%20Conceito." target="_blank" rel="noopener">Agendar visita pelo WhatsApp</a>
-          <a class="btn btn-ghost" href="#diferenciais">Conheça a Vorani</a>
-        </div>
-      </div>
-    </div>
-    <span class="hero-note">Imagem ilustrativa</span>
-  </section>
-
-  <section class="numbers" aria-label="A Vorani em números">
-    <div class="wrap">
-      <div class="num"><b>8</b><span>anos de mercado</span></div>
-      <div class="num"><b>+4 mil</b><span>clientes atendidos</span></div>
-      <div class="num"><b>5 anos</b><span>de garantia</span></div>
-      <div class="num"><b>3</b><span>lojas em São Paulo</span></div>
-    </div>
-  </section>
-
-  <section class="block" id="diferenciais">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow">Por que a Vorani</p>
-          <h2>Segurança do primeiro traço até muito depois da montagem.</h2>
-        </div>
-        <p>Móvel planejado é uma decisão grande. Por isso a Vorani cuida de cada etapa com gente dedicada, processo organizado e uma estrutura que está aqui há 8 anos.</p>
-      </div>
-      <div class="diffs">
-        <article class="diff">
-          <svg viewBox="0 0 30 30" aria-hidden="true"><rect x="8" y="3" width="14" height="24" rx="2"/><path d="M12 11l2.5 2.5L19 9"/><line x1="13" y1="23" x2="17" y2="23"/></svg>
-          <h3>Acompanhamento online</h3>
-          <p>Você acompanha o seu pedido em tempo real pelo aplicativo, da fabricação à montagem.</p>
-        </article>
-        <article class="diff">
-          <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="10" r="5"/><path d="M5 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg>
-          <h3>Atendimento exclusivo</h3>
-          <p>Um profissional dedicado em cada etapa do processo. Você sempre sabe com quem falar.</p>
-        </article>
-        <article class="diff">
-          <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M4 26L22 8l4 4L8 30H4z" transform="translate(0 -3)"/><line x1="18" y1="9" x2="22" y2="13"/></svg>
-          <h3>Projetistas designers de interiores</h3>
-          <p>Seu projeto começa com um moodboard exclusivo e é desenhado por quem entende de interiores.</p>
-        </article>
-        <article class="diff">
-          <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 26s-10-6-10-13a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 7-10 13-10 13z"/></svg>
-          <h3>Pós-venda humanizado</h3>
-          <p>Uma equipe de 18 pessoas só no pós-venda, para cuidar de você depois da entrega.</p>
-        </article>
-        <article class="diff">
-          <svg viewBox="0 0 30 30" aria-hidden="true"><rect x="3" y="8" width="24" height="16" rx="1.5"/><line x1="3" y1="13" x2="27" y2="13"/><line x1="7" y1="19" x2="13" y2="19"/></svg>
-          <h3>Financeira própria</h3>
-          <p>Condições de pagamento pensadas pela própria Vorani, para o projeto caber no seu planejamento.</p>
-        </article>
-        <article class="diff">
-          <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3l10 4v7c0 6.5-4.3 11-10 13C9.3 25 5 20.5 5 14V7z"/><path d="M10.5 15l3 3 6-6"/></svg>
-          <h3>3 lojas sólidas</h3>
-          <p>Penha, Imirim e Braz Leme. Uma marca estabelecida desde 2018, com mais de 4 mil clientes atendidos.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="block process" id="processo">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow">Como funciona</p>
-          <h2>Nove etapas, nenhuma surpresa.</h2>
-        </div>
-        <p>Um processo estruturado para evitar ruídos, atrasos e retrabalho. Cada projeto respeita a rotina, o espaço e as necessidades de quem vai morar nele.</p>
-      </div>
-      <ol class="steps">
-        <li><b>Atendimento inicial</b><span>Conversa com o projetista na loja.</span></li>
-        <li><b>Negociação direta</b><span>Condições tratadas com o gerente.</span></li>
-        <li><b>Medição no local</b><span>Cada parede medida no seu imóvel.</span></li>
-        <li><b>Projeto executivo</b><span>O desenho final, detalhado peça por peça.</span></li>
-        <li><b>Fabricação</b><span>Enviado para a fábrica Italínea.</span></li>
-        <li><b>Transporte</b><span>Da fábrica no Rio Grande do Sul ao centro de distribuição em São Paulo.</span></li>
-        <li><b>Conferência</b><span>Todas as peças conferidas antes de sair.</span></li>
-        <li><b>Agendamento</b><span>A entrega marcada no seu tempo.</span></li>
-        <li><b>Montagem</b><span>Seu ambiente pronto, do jeito que foi projetado.</span></li>
-      </ol>
-      <p class="process-note">Mais clareza na criação. Mais segurança nas decisões.</p>
-    </div>
-  </section>
-
-  <section class="block mood">
-    <div class="wrap">
-      <div class="mood-copy">
-        <p class="eyebrow">Moodboard exclusivo</p>
-        <h2>Seu projeto já nasce com identidade.</h2>
-        <p>Antes de desenhar o ambiente, o projetista monta um painel só seu, com cores, materiais, acabamentos e estilo. Assim cada escolha segue o mesmo conceito e você enxerga o resultado antes de decidir.</p>
-      </div>
-      <div class="board" aria-hidden="true">
-        <div class="sw-1"><small>Madeira escura</small></div>
-        <div class="sw-2"><small>Off-white</small></div>
-        <div class="sw-3"><small>Metais dourados</small></div>
-        <div class="sw-4"><small>Grafite</small></div>
-        <div class="sw-5"><small>Lâmina natural</small></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="ambientes">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow">Ambientes</p>
-          <h2>Da cozinha ao espaço comercial, sob medida.</h2>
-        </div>
-        <p>A cozinha é o ambiente que a Vorani mais projeta, com foco em organização e aproveitamento de cada canto. Também desenhamos apartamentos, casas e espaços comerciais.</p>
-      </div>
-      <div class="rooms">
-        <figure class="room"><img src="img/cozinha.webp" alt="Cozinha branca com ilha e torre de eletros embutidos" loading="lazy"><figcaption class="tag"><b>Cozinhas</b><span>Funcionais e organizadas</span></figcaption></figure>
-        <figure class="room"><img src="img/apartamento.webp" alt="Sala de apartamento com estante embutida e janelas amplas" loading="lazy"><figcaption class="tag"><b>Apartamentos</b><span>Cada metro aproveitado</span></figcaption></figure>
-        <figure class="room"><img src="img/casa.webp" alt="Dormitório com guarda-roupa de portas em madeira clara" loading="lazy"><figcaption class="tag"><b>Casas</b><span>Conforto para a família</span></figcaption></figure>
-        <figure class="room"><img src="img/comercial.webp" alt="Escritório com bancada planejada e vista da cidade" loading="lazy"><figcaption class="tag"><b>Comercial</b><span>Estética e eficiência</span></figcaption></figure>
-      </div>
-      <p class="rooms-note">Imagens ilustrativas.</p>
-    </div>
-  </section>
-
-  <section class="visit" id="visite">
-    <div class="wrap">
-      <div class="visit-copy">
-        <p class="eyebrow">Visite a Vorani Conceito</p>
-        <h2>Venha conhecer e <em>se surpreender.</em></h2>
-        <p>Agende sua visita na loja da Casa Verde e converse com um projetista sobre o seu ambiente.</p>
-        <div class="ctas">
-          <a class="btn btn-solid" href="https://wa.me/551125381890?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20na%20Vorani%20Conceito." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Braz%20Leme%2C%201335%20-%20Casa%20Verde%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002511-000" target="_blank" rel="noopener">Ver no mapa</a>
-        </div>
-      </div>
-      <div class="card">
-        <dl>
-          <div><dt>Endereço</dt><dd>Av. Braz Leme, 1335 — Casa Verde<br>São Paulo, SP · 02511-000</dd></div>
-          <div><dt>WhatsApp e telefone</dt><dd><a href="https://wa.me/551125381890" target="_blank" rel="noopener">(11) 2538-1890</a></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/voraniconceitoitalinea/" target="_blank" rel="noopener">@voraniconceitoitalinea</a></dd></div>
-          <div><dt>E-mail</dt><dd>adm@voraniplanejados.com.br</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
+<main id="conteudo">
+<section class="hero" aria-labelledby="h1">
+<div class="hero-img"><picture><source type="image/avif" media="(max-width: 700px)" srcset="img/hero-m-480.avif 480w, img/hero-m-720.avif 720w, img/hero-m-960.avif 960w" sizes="100vw"><source type="image/webp" media="(max-width: 700px)" srcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w, img/hero-m-960.webp 960w" sizes="100vw"><source type="image/avif" srcset="img/hero-640.avif 640w, img/hero-820.avif 820w, img/hero-1080.avif 1080w, img/hero-1440.avif 1440w, img/hero-1920.avif 1920w" sizes="100vw"><source type="image/webp" srcset="img/hero-640.webp 640w, img/hero-820.webp 820w, img/hero-1080.webp 1080w, img/hero-1440.webp 1440w, img/hero-1920.webp 1920w" sizes="100vw"><img src="img/hero-1080.webp" width="1920" height="1195" alt="Ambiente de estar com adega, biblioteca iluminada e poltronas em madeira" loading="eager" fetchpriority="high" decoding="async"></picture></div>
+<div class="wrap">
+<div class="hero-in">
+<span class="eyebrow">Loja conceito Italínea · Casa Verde, São Paulo</span>
+<h1 id="h1">Móveis planejados que <em>atravessam o tempo</em></h1>
+<p>Seu projeto nasce na loja, com projetistas designers de interiores e um moodboard só seu. É fabricado pela Italínea, a maior rede de lojas de móveis planejados da América Latina, e tem 5 anos de garantia.</p>
+<div class="hero-cta">
+<a class="btn btn-gold" href="https://wa.me/551125381890?text=Ol%C3%A1!%20Quero%20agendar%20uma%20visita%20na%20Vorani%20Conceito." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.5c.2 2.6 2.4 5 5.2 5.6l1.1-1.3 1.9.9-.4 1.6c-3.8.4-8-3.5-8.2-7.6L10.2 7l.9 1.9z"/></svg>Agendar visita</a>
+<a class="btn btn-ghost" href="#ambientes">Ver ambientes</a>
+</div>
+</div>
+</div>
+<span class="hero-tag">Imagem: showroom Italínea</span>
+</section>
+<section class="proof" aria-label="A Vorani em números">
+<div class="wrap">
+<ul>
+<li><b>8 anos</b><span>Desde 2018</span></li>
+<li><b data-count="4000" data-prefix="+" data-format="mil">+4 mil</b><span>Clientes atendidos</span></li>
+<li><b>5 anos</b><span>De garantia</span></li>
+<li><b>3 lojas</b><span>Em São Paulo</span></li>
+</ul>
+</div>
+</section>
+<section class="sec" id="conceito" aria-labelledby="t-conceito">
+<div class="wrap concept">
+<div class="concept-text rv">
+<span class="eyebrow">A loja conceito</span>
+<h2 class="title" id="t-conceito">Você enxerga o resultado antes de decidir</h2>
+<span class="rule" aria-hidden="true"></span>
+<p class="lead">Na Vorani Conceito o projeto começa por você: sua rotina, seu espaço e o jeito que você quer viver. Antes de desenhar, o projetista monta um moodboard exclusivo com cores, materiais e acabamentos. Assim cada escolha segue o mesmo conceito, do primeiro traço à montagem.</p>
+<div class="moods" aria-label="Exemplo de paleta de um moodboard">
+<span><i style="background:#5a3f2b"></i>Madeira escura</span>
+<span><i style="background:#f3efe8"></i>Off-white</span>
+<span><i style="background:#c2a067"></i>Metais dourados</span>
+<span><i style="background:#4b4b4b"></i>Grafite</span>
+<span><i style="background:#c9a77f"></i>Lâmina natural</span>
+</div>
+<div><a class="btn btn-line" href="#orcamento">Começar meu moodboard</a></div>
+</div>
+<div class="concept-photos rv">
+<div class="p1"><picture><source type="image/avif" srcset="img/showroom-jardim-640.avif 640w, img/showroom-jardim-1024.avif 1024w, img/showroom-jardim-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 560px"><source type="image/webp" srcset="img/showroom-jardim-640.webp 640w, img/showroom-jardim-1024.webp 1024w, img/showroom-jardim-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 560px"><img src="img/showroom-jardim-1024.webp" width="1440" height="961" alt="Living e cozinha integrados com estante vazada e jardim ao fundo" loading="lazy" decoding="async"></picture></div>
+<div class="p2"><picture><source type="image/avif" srcset="img/pessoas-projeto-480.avif 480w, img/pessoas-projeto-800.avif 800w, img/pessoas-projeto-1200.avif 1200w" sizes="(max-width: 900px) 52vw, 300px"><source type="image/webp" srcset="img/pessoas-projeto-480.webp 480w, img/pessoas-projeto-800.webp 800w, img/pessoas-projeto-1200.webp 1200w" sizes="(max-width: 900px) 52vw, 300px"><img src="img/pessoas-projeto-800.webp" width="1200" height="800" alt="Cliente escolhendo acabamentos numa tela interativa" loading="lazy" decoding="async"></picture></div>
+</div>
+</div>
+</section>
+<section class="sec" id="ambientes" aria-labelledby="t-amb" style="padding-top:0">
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Ambientes</span>
+<h2 class="title" id="t-amb">Da cozinha ao closet, sob medida</h2>
+<span class="rule" aria-hidden="true"></span>
+<p class="lead">A cozinha é o ambiente que a Vorani mais projeta, com foco em organização e aproveitamento de cada canto. Também desenhamos livings, dormitórios, closets, banheiros, home office, lavanderia e espaço gourmet.</p>
+</div>
+<div class="filters" role="group" aria-label="Filtrar ambientes">
+<button type="button" aria-pressed="true" data-f="todos">Todos</button>
+<button type="button" aria-pressed="false" data-f="cozinha">Cozinhas</button>
+<button type="button" aria-pressed="false" data-f="living">Living</button>
+<button type="button" aria-pressed="false" data-f="dormitorio">Dormitórios</button>
+<button type="button" aria-pressed="false" data-f="closet">Closets</button>
+<button type="button" aria-pressed="false" data-f="banheiro">Banheiros</button>
+<button type="button" aria-pressed="false" data-f="gourmet">Gourmet</button>
+<button type="button" aria-pressed="false" data-f="outros">Home office e lavanderia</button>
+</div>
+<div class="gallery" id="galeria">
+<button type="button" class="tile big" data-cat="cozinha" data-key="cozinha-preta" data-widths="480,800,1280" aria-label="Ampliar foto: Cozinha com sala de jantar"><picture><source type="image/avif" srcset="img/cozinha-preta-480.avif 480w, img/cozinha-preta-800.avif 800w, img/cozinha-preta-1280.avif 1280w" sizes="(max-width: 860px) 100vw, 590px"><source type="image/webp" srcset="img/cozinha-preta-480.webp 480w, img/cozinha-preta-800.webp 800w, img/cozinha-preta-1280.webp 1280w" sizes="(max-width: 860px) 100vw, 590px"><img src="img/cozinha-preta-800.webp" width="1280" height="853" alt="Cozinha preta com mesa de jantar em madeira e cristaleira iluminada" loading="lazy" decoding="async"></picture><span class="cap">Cozinha com sala de jantar</span></button>
+<button type="button" class="tile" data-cat="living" data-key="living-cobre" data-widths="480,800,1280" aria-label="Ampliar foto: Living com painel giratório"><picture><source type="image/avif" srcset="img/living-cobre-480.avif 480w, img/living-cobre-800.avif 800w, img/living-cobre-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/living-cobre-480.webp 480w, img/living-cobre-800.webp 800w, img/living-cobre-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/living-cobre-800.webp" width="1280" height="870" alt="Living com painel de TV giratório e estante em estrutura cobre" loading="lazy" decoding="async"></picture><span class="cap">Living com painel giratório</span></button>
+<button type="button" class="tile tall" data-cat="closet" data-key="closet-vidro" data-widths="480,800,1280" aria-label="Ampliar foto: Closet com portas de vidro"><picture><source type="image/avif" srcset="img/closet-vidro-480.avif 480w, img/closet-vidro-800.avif 800w, img/closet-vidro-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/closet-vidro-480.webp 480w, img/closet-vidro-800.webp 800w, img/closet-vidro-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/closet-vidro-800.webp" width="1280" height="1920" alt="Closet com portas de vidro, cabideiro e gavetas" loading="lazy" decoding="async"></picture><span class="cap">Closet com portas de vidro</span></button>
+<button type="button" class="tile" data-cat="cozinha" data-key="cozinha-ilha" data-widths="480,800,1280" aria-label="Ampliar foto: Cozinha com ilha"><picture><source type="image/avif" srcset="img/cozinha-ilha-480.avif 480w, img/cozinha-ilha-800.avif 800w, img/cozinha-ilha-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/cozinha-ilha-480.webp 480w, img/cozinha-ilha-800.webp 800w, img/cozinha-ilha-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/cozinha-ilha-800.webp" width="1280" height="854" alt="Cozinha com ilha em madeira, pendentes de vidro e armários grafite" loading="lazy" decoding="async"></picture><span class="cap">Cozinha com ilha</span></button>
+<button type="button" class="tile wide" data-cat="dormitorio" data-key="suite-closet" data-widths="480,800,1280" aria-label="Ampliar foto: Suíte com closet"><picture><source type="image/avif" srcset="img/suite-closet-480.avif 480w, img/suite-closet-800.avif 800w, img/suite-closet-1280.avif 1280w" sizes="(max-width: 860px) 100vw, 590px"><source type="image/webp" srcset="img/suite-closet-480.webp 480w, img/suite-closet-800.webp 800w, img/suite-closet-1280.webp 1280w" sizes="(max-width: 860px) 100vw, 590px"><img src="img/suite-closet-800.webp" width="1280" height="758" alt="Suíte com closet de portas de vidro e cabeceira estofada" loading="lazy" decoding="async"></picture><span class="cap">Suíte com closet</span></button>
+<button type="button" class="tile tall" data-cat="banheiro" data-key="banheiro-rosa" data-widths="480,800,1280" aria-label="Ampliar foto: Banheiro"><picture><source type="image/avif" srcset="img/banheiro-rosa-480.avif 480w, img/banheiro-rosa-800.avif 800w, img/banheiro-rosa-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/banheiro-rosa-480.webp 480w, img/banheiro-rosa-800.webp 800w, img/banheiro-rosa-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/banheiro-rosa-800.webp" width="1280" height="2025" alt="Banheiro com gabinete suspenso, cuba de apoio e revestimento rosa" loading="lazy" decoding="async"></picture><span class="cap">Banheiro</span></button>
+<button type="button" class="tile wide" data-cat="gourmet" data-key="gourmet" data-widths="480,800,1280" aria-label="Ampliar foto: Espaço gourmet"><picture><source type="image/avif" srcset="img/gourmet-480.avif 480w, img/gourmet-800.avif 800w, img/gourmet-1280.avif 1280w" sizes="(max-width: 860px) 100vw, 590px"><source type="image/webp" srcset="img/gourmet-480.webp 480w, img/gourmet-800.webp 800w, img/gourmet-1280.webp 1280w" sizes="(max-width: 860px) 100vw, 590px"><img src="img/gourmet-800.webp" width="1280" height="839" alt="Espaço gourmet com bancada em madeira, banquetas e nicho iluminado" loading="lazy" decoding="async"></picture><span class="cap">Espaço gourmet</span></button>
+<button type="button" class="tile tall" data-cat="cozinha" data-key="cozinha-grafite" data-widths="480,800,1280" aria-label="Ampliar foto: Cozinha grafite"><picture><source type="image/avif" srcset="img/cozinha-grafite-480.avif 480w, img/cozinha-grafite-800.avif 800w, img/cozinha-grafite-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/cozinha-grafite-480.webp 480w, img/cozinha-grafite-800.webp 800w, img/cozinha-grafite-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/cozinha-grafite-800.webp" width="1280" height="1918" alt="Cozinha grafite com nichos de vidro iluminados e refrigerador embutido" loading="lazy" decoding="async"></picture><span class="cap">Cozinha grafite</span></button>
+<button type="button" class="tile" data-cat="living" data-key="living-estante" data-widths="480,800,1280" aria-label="Ampliar foto: Estante iluminada"><picture><source type="image/avif" srcset="img/living-estante-480.avif 480w, img/living-estante-800.avif 800w, img/living-estante-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/living-estante-480.webp 480w, img/living-estante-800.webp 800w, img/living-estante-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/living-estante-800.webp" width="1280" height="853" alt="Sala com estante grafite, nichos iluminados e painel ripado" loading="lazy" decoding="async"></picture><span class="cap">Estante iluminada</span></button>
+<button type="button" class="tile" data-cat="outros" data-key="home-office" data-widths="480,800,1280" aria-label="Ampliar foto: Home office"><picture><source type="image/avif" srcset="img/home-office-480.avif 480w, img/home-office-800.avif 800w, img/home-office-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/home-office-480.webp 480w, img/home-office-800.webp 800w, img/home-office-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/home-office-800.webp" width="1280" height="875" alt="Home office com bancada, espelho orgânico e painel ripado" loading="lazy" decoding="async"></picture><span class="cap">Home office</span></button>
+<button type="button" class="tile" data-cat="dormitorio" data-key="dormitorio" data-widths="480,800,1280" aria-label="Ampliar foto: Dormitório"><picture><source type="image/avif" srcset="img/dormitorio-480.avif 480w, img/dormitorio-800.avif 800w, img/dormitorio-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/dormitorio-480.webp 480w, img/dormitorio-800.webp 800w, img/dormitorio-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/dormitorio-800.webp" width="1280" height="853" alt="Dormitório off-white com armários de porta lisa e poltrona" loading="lazy" decoding="async"></picture><span class="cap">Dormitório</span></button>
+<button type="button" class="tile wide" data-cat="gourmet" data-key="gourmet-arcos" data-widths="480,800,1280" aria-label="Ampliar foto: Cozinha com arcos"><picture><source type="image/avif" srcset="img/gourmet-arcos-480.avif 480w, img/gourmet-arcos-800.avif 800w, img/gourmet-arcos-1280.avif 1280w" sizes="(max-width: 860px) 100vw, 590px"><source type="image/webp" srcset="img/gourmet-arcos-480.webp 480w, img/gourmet-arcos-800.webp 800w, img/gourmet-arcos-1280.webp 1280w" sizes="(max-width: 860px) 100vw, 590px"><img src="img/gourmet-arcos-800.webp" width="1280" height="814" alt="Cozinha com arcos azuis, ilha estofada e prateleiras" loading="lazy" decoding="async"></picture><span class="cap">Cozinha com arcos</span></button>
+<button type="button" class="tile tall" data-cat="closet" data-key="closet-madeira" data-widths="480,800,1280" aria-label="Ampliar foto: Closet em madeira"><picture><source type="image/avif" srcset="img/closet-madeira-480.avif 480w, img/closet-madeira-800.avif 800w, img/closet-madeira-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/closet-madeira-480.webp 480w, img/closet-madeira-800.webp 800w, img/closet-madeira-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/closet-madeira-800.webp" width="1280" height="1920" alt="Closet aberto em madeira com portas de vidro" loading="lazy" decoding="async"></picture><span class="cap">Closet em madeira</span></button>
+<button type="button" class="tile" data-cat="living" data-key="living-sofa" data-widths="480,800,1280" aria-label="Ampliar foto: Living"><picture><source type="image/avif" srcset="img/living-sofa-480.avif 480w, img/living-sofa-800.avif 800w, img/living-sofa-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/living-sofa-480.webp 480w, img/living-sofa-800.webp 800w, img/living-sofa-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/living-sofa-800.webp" width="1280" height="836" alt="Living com estante sob medida, painel de TV e mesas de centro" loading="lazy" decoding="async"></picture><span class="cap">Living</span></button>
+<button type="button" class="tile" data-cat="outros" data-key="lavanderia" data-widths="480,800,1280" aria-label="Ampliar foto: Lavanderia"><picture><source type="image/avif" srcset="img/lavanderia-480.avif 480w, img/lavanderia-800.avif 800w, img/lavanderia-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/lavanderia-480.webp 480w, img/lavanderia-800.webp 800w, img/lavanderia-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/lavanderia-800.webp" width="1280" height="751" alt="Lavanderia planejada com nicho para máquina e armários grafite" loading="lazy" decoding="async"></picture><span class="cap">Lavanderia</span></button>
+<button type="button" class="tile" data-cat="cozinha" data-key="cozinha-clara" data-widths="480,800,1280" aria-label="Ampliar foto: Cozinha em madeira clara"><picture><source type="image/avif" srcset="img/cozinha-clara-480.avif 480w, img/cozinha-clara-800.avif 800w, img/cozinha-clara-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/cozinha-clara-480.webp 480w, img/cozinha-clara-800.webp 800w, img/cozinha-clara-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/cozinha-clara-800.webp" width="1280" height="853" alt="Cozinha em madeira clara com prateleira suspensa e iluminação embutida" loading="lazy" decoding="async"></picture><span class="cap">Cozinha em madeira clara</span></button>
+<button type="button" class="tile" data-cat="dormitorio" data-key="dormitorio-espelho" data-widths="480,800,1280" aria-label="Ampliar foto: Dormitório com espelho"><picture><source type="image/avif" srcset="img/dormitorio-espelho-480.avif 480w, img/dormitorio-espelho-800.avif 800w, img/dormitorio-espelho-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/dormitorio-espelho-480.webp 480w, img/dormitorio-espelho-800.webp 800w, img/dormitorio-espelho-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/dormitorio-espelho-800.webp" width="1280" height="853" alt="Dormitório com armário espelhado e painel de madeira" loading="lazy" decoding="async"></picture><span class="cap">Dormitório com espelho</span></button>
+<button type="button" class="tile" data-cat="banheiro" data-key="banheiro-branco" data-widths="480,800,1280" aria-label="Ampliar foto: Gabinete de banheiro"><picture><source type="image/avif" srcset="img/banheiro-branco-480.avif 480w, img/banheiro-branco-800.avif 800w, img/banheiro-branco-1280.avif 1280w" sizes="(max-width: 860px) 50vw, 300px"><source type="image/webp" srcset="img/banheiro-branco-480.webp 480w, img/banheiro-branco-800.webp 800w, img/banheiro-branco-1280.webp 1280w" sizes="(max-width: 860px) 50vw, 300px"><img src="img/banheiro-branco-800.webp" width="1280" height="853" alt="Gabinete de banheiro branco com bancada de mármore" loading="lazy" decoding="async"></picture><span class="cap">Gabinete de banheiro</span></button>
+</div>
+<p class="gallery-note">Imagens ilustrativas do showroom Italínea. Cada projeto Vorani é desenhado sob medida para o seu espaço.</p>
+</div>
+</section>
+<section class="factory dark sec" id="fabrica" aria-labelledby="t-fab">
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Fabricação Italínea</span>
+<h2 id="t-fab">O seu projeto sai de <em>um dos parques fabris mais modernos do país</em></h2>
+<p class="lead">A Vorani desenha. A Italínea fabrica, desde 1997, em Bento Gonçalves, na Serra Gaúcha. É a maior rede de lojas de móveis planejados da América Latina.</p>
+</div>
+<div class="fab-grid rv">
+<figure><picture><source type="image/avif" srcset="img/fabrica-1-640.avif 640w, img/fabrica-1-1000.avif 1000w, img/fabrica-1-1400.avif 1400w, img/fabrica-1-1900.avif 1900w" sizes="(max-width: 1180px) 100vw, 1140px"><source type="image/webp" srcset="img/fabrica-1-640.webp 640w, img/fabrica-1-1000.webp 1000w, img/fabrica-1-1400.webp 1400w, img/fabrica-1-1900.webp 1900w" sizes="(max-width: 1180px) 100vw, 1140px"><img src="img/fabrica-1-1000.webp" width="1900" height="1266" alt="Vista aérea do parque fabril da Italínea em Bento Gonçalves, com os galpões e a área de expansão" loading="lazy" decoding="async"></picture><figcaption>Parque fabril Italínea · Bento Gonçalves (RS)</figcaption></figure>
+</div>
+<div class="big-num rv">
+<b data-count="125">125<small>mil m²</small></b>
+<p><strong>Parque fabril</strong>Área da fábrica depois da expansão concluída em 2024. Antes eram 54 mil m².</p>
+</div>
+<ul class="nums rv">
+<li><b data-count="26" data-suffix=" milhões">26 milhões</b><span>de peças produzidas</span></li>
+<li><b data-count="13" data-suffix=" milhões">13 milhões</b><span>de volumes expedidos</span></li>
+<li><b data-count="4.7" data-suffix=" milhões">4,7 milhões</b><span>de peças sob medida</span></li>
+<li><b data-count="1.6" data-suffix=" milhão">1,6 milhão</b><span>de chapas cortadas</span></li>
+<li><b data-count="70" data-suffix="%">70%</b><span>da produção expedida just in time</span></li>
+</ul>
+<ol class="timeline rv" aria-label="Linha do tempo da Italínea">
+<li><b>1997</b><span>Fundação, na Serra Gaúcha</span></li>
+<li><b>2001</b><span>Começa a atuar fora do Brasil, na América Latina</span></li>
+<li><b>2013</b><span>Maior rede de lojas de móveis planejados do Brasil</span></li>
+<li><b>2018</b><span>1.200 pontos de venda, 700 deles lojas exclusivas</span></li>
+<li><b>2024</b><span>Parque fabril ampliado para 125 mil m²</span></li>
+</ol>
+<div class="factory-foot rv">
+<p><strong>Material que cuida da sua casa.</strong> A Italínea usa MDP e MDF E1, de baixa emissão de formaldeído, feito com madeira de florestas plantadas.</p>
+<p><strong>Da Serra Gaúcha até você.</strong> O projeto executivo vai para a fábrica, segue para o centro de distribuição em São Paulo e cada peça é conferida antes da entrega.</p>
+<p class="source">Dados da fábrica: <a href="https://www.italinea.com.br/sobre-a-empresa/" target="_blank" rel="noopener">italinea.com.br</a>, consultado em outubro de 2026.</p>
+</div>
+</div>
+</section>
+<section class="sec" id="diferenciais" aria-labelledby="t-dif">
+<div class="wrap">
+<div class="head center rv">
+<span class="eyebrow">Por que a Vorani</span>
+<h2 class="title" id="t-dif">Segurança do primeiro traço até depois da montagem</h2>
+<span class="rule" aria-hidden="true"></span>
+<p class="lead">Móvel planejado é uma decisão grande. Por isso a Vorani cuida de cada etapa com gente dedicada, processo organizado e uma estrutura que está aqui desde 2018.</p>
+</div>
+<div class="cards">
+<article class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/><path d="M4 20h16"/></svg><h3>Projetistas designers de interiores</h3><p>Seu projeto começa com um moodboard exclusivo e é desenhado por quem entende de interiores.</p></article>
+<article class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.7-5.5 7-5.5s6.2 1.9 7 5.5"/></svg><h3>Atendimento exclusivo</h3><p>Um profissional dedicado em cada etapa do processo. Você sempre sabe com quem falar.</p></article>
+<article class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M10.5 18h3"/><path d="M10 9.5l1.6 1.6L14.5 8"/></svg><h3>Acompanhamento online</h3><p>Você acompanha o pedido em tempo real pelo aplicativo, da fabricação à montagem.</p></article>
+<article class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><h3>Pós-venda humanizado</h3><p>Uma equipe de 18 pessoas só no pós-venda, para cuidar de você depois da entrega.</p></article>
+<article class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg><h3>Financeira própria</h3><p>Condições de pagamento pensadas pela própria Vorani, para o projeto caber no seu planejamento.</p></article>
+<article class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>5 anos de garantia</h3><p>Fabricação Italínea e uma marca com 3 lojas e mais de 4 mil clientes atendidos.</p></article>
+</div>
+</div>
+</section>
+<section class="life" aria-label="Feito para a sua rotina">
+<picture><source type="image/avif" srcset="img/pessoas-familia-480.avif 480w, img/pessoas-familia-800.avif 800w, img/pessoas-familia-1200.avif 1200w" sizes="(max-width: 860px) 100vw, 57vw"><source type="image/webp" srcset="img/pessoas-familia-480.webp 480w, img/pessoas-familia-800.webp 800w, img/pessoas-familia-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 57vw"><img src="img/pessoas-familia-800.webp" width="1200" height="1800" alt="Família reunida à mesa numa cozinha planejada" loading="lazy" decoding="async"></picture>
+<div class="life-text rv">
+<span class="eyebrow" style="color:var(--gold-on-dark)">Para a vida real</span>
+<p class="quote">Cada projeto respeita a rotina, o espaço e as necessidades de quem vai morar nele.</p>
+<p>Gavetas que organizam, nichos que iluminam, uma mesa onde a família inteira cabe. O planejado bem feito some no dia a dia e deixa a casa funcionar.</p>
+</div>
+</section>
+<section class="sec" id="como-funciona" aria-labelledby="t-proc">
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Como funciona</span>
+<h2 class="title" id="t-proc">Nove etapas, nenhuma surpresa</h2>
+<span class="rule" aria-hidden="true"></span>
+<p class="lead">Um processo estruturado para evitar ruídos, atrasos e retrabalho.</p>
+</div>
+<ol class="steps">
+<li><h3>Atendimento inicial</h3><p>Conversa com o projetista na loja.</p></li>
+<li><h3>Negociação direta</h3><p>Condições tratadas com o gerente.</p></li>
+<li><h3>Medição no local</h3><p>Cada parede medida no seu imóvel.</p></li>
+<li><h3>Projeto executivo</h3><p>O desenho final, detalhado peça por peça.</p></li>
+<li><h3>Fabricação</h3><p>Enviado para a fábrica Italínea.</p></li>
+<li><h3>Transporte</h3><p>Da fábrica no Rio Grande do Sul ao centro de distribuição em São Paulo.</p></li>
+<li><h3>Conferência</h3><p>Todas as peças conferidas antes de sair.</p></li>
+<li><h3>Agendamento</h3><p>A entrega marcada no seu tempo.</p></li>
+<li><h3>Montagem</h3><p>Seu ambiente pronto, do jeito que foi projetado.</p></li>
+</ol>
+<p class="quote steps-end rv">Mais clareza na criação. Mais segurança nas decisões.</p>
+</div>
+</section>
+<section class="sec" id="detalhes" aria-labelledby="t-det" style="padding-top:0">
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Detalhes</span>
+<h2 class="title" id="t-det">O que você sente ao abrir cada porta</h2>
+<span class="rule" aria-hidden="true"></span>
+</div>
+<div class="details">
+<figure class="rv"><div class="ph"><picture><source type="image/avif" srcset="img/det-gaveta-400.avif 400w, img/det-gaveta-700.avif 700w" sizes="(max-width: 860px) 50vw, 280px"><source type="image/webp" srcset="img/det-gaveta-400.webp 400w, img/det-gaveta-700.webp 700w" sizes="(max-width: 860px) 50vw, 280px"><img src="img/det-gaveta-700.webp" width="700" height="1050" alt="Gaveta aberta com organizador de talheres" loading="lazy" decoding="async"></picture></div><figcaption><b>Gavetas organizadoras</b>Talheres e utensílios no lugar certo.</figcaption></figure>
+<figure class="rv"><div class="ph"><picture><source type="image/avif" srcset="img/det-temperos-400.avif 400w, img/det-temperos-700.avif 700w" sizes="(max-width: 860px) 50vw, 280px"><source type="image/webp" srcset="img/det-temperos-400.webp 400w, img/det-temperos-700.webp 700w" sizes="(max-width: 860px) 50vw, 280px"><img src="img/det-temperos-700.webp" width="700" height="1050" alt="Gaveta organizadora de temperos com divisórias" loading="lazy" decoding="async"></picture></div><figcaption><b>Acessórios internos</b>Divisórias pensadas para o seu uso.</figcaption></figure>
+<figure class="rv"><div class="ph"><picture><source type="image/avif" srcset="img/det-verde-400.avif 400w, img/det-verde-700.avif 700w" sizes="(max-width: 860px) 50vw, 280px"><source type="image/webp" srcset="img/det-verde-400.webp 400w, img/det-verde-700.webp 700w" sizes="(max-width: 860px) 50vw, 280px"><img src="img/det-verde-700.webp" width="700" height="1050" alt="Gabinete verde com puxador dourado e bancada de granilite" loading="lazy" decoding="async"></picture></div><figcaption><b>Cores e puxadores</b>Acabamentos escolhidos no moodboard.</figcaption></figure>
+<figure class="rv"><div class="ph"><picture><source type="image/avif" srcset="img/det-tacas-400.avif 400w, img/det-tacas-700.avif 700w" sizes="(max-width: 860px) 50vw, 280px"><source type="image/webp" srcset="img/det-tacas-400.webp 400w, img/det-tacas-700.webp 700w" sizes="(max-width: 860px) 50vw, 280px"><img src="img/det-tacas-700.webp" width="700" height="1050" alt="Prateleiras de vidro com taças e iluminação" loading="lazy" decoding="async"></picture></div><figcaption><b>Vidro e iluminação</b>Nichos que valorizam o que você guarda.</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="quote-sec sec" id="orcamento" aria-labelledby="t-orc">
+<div class="wrap quote-grid">
+<div class="quote-side rv">
+<span class="eyebrow" style="color:var(--gold-on-dark)">Orçamento sem compromisso</span>
+<h2 id="t-orc">Conte o que você imagina</h2>
+<span class="rule" aria-hidden="true"></span>
+<p class="lead" style="color:var(--on-dark-muted)">Preencha e a conversa abre no WhatsApp da loja, com tudo já escrito. Um projetista responde e agenda sua visita.</p>
+<ul>
+<li>Projeto com designer de interiores</li>
+<li>Moodboard exclusivo antes do desenho</li>
+<li>Fabricação Italínea e 5 anos de garantia</li>
+</ul>
+</div>
+<form id="form-orcamento" novalidate aria-describedby="form-note">
+<div class="f"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required></div>
+<div class="f"><label for="bairro">Bairro ou cidade</label><input id="bairro" name="bairro" autocomplete="address-level2"></div>
+<fieldset class="f full">
+<legend>Quais ambientes?</legend>
+<div class="chips">
+<label><input type="checkbox" name="amb" value="Cozinha"><span>Cozinha</span></label>
+<label><input type="checkbox" name="amb" value="Dormitório"><span>Dormitório</span></label>
+<label><input type="checkbox" name="amb" value="Closet"><span>Closet</span></label>
+<label><input type="checkbox" name="amb" value="Living"><span>Living</span></label>
+<label><input type="checkbox" name="amb" value="Banheiro"><span>Banheiro</span></label>
+<label><input type="checkbox" name="amb" value="Home office"><span>Home office</span></label>
+<label><input type="checkbox" name="amb" value="Lavanderia"><span>Lavanderia</span></label>
+<label><input type="checkbox" name="amb" value="Espaço gourmet"><span>Gourmet</span></label>
+<label><input type="checkbox" name="amb" value="Espaço comercial"><span>Comercial</span></label>
+</div>
+</fieldset>
+<div class="f full"><label for="msg">Conte um pouco do seu espaço (opcional)</label><textarea id="msg" name="msg" placeholder="Ex.: apartamento novo, cozinha integrada com a sala"></textarea></div>
+<div class="form-end">
+<button class="btn btn-gold" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.5c.2 2.6 2.4 5 5.2 5.6l1.1-1.3 1.9.9-.4 1.6c-3.8.4-8-3.5-8.2-7.6L10.2 7l.9 1.9z"/></svg>Enviar pelo WhatsApp</button>
+<p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+<p class="form-note" id="form-note">Nada fica guardado neste site. A mensagem abre no seu WhatsApp e só é enviada quando você tocar em enviar.</p>
+</div>
+</form>
+</div>
+</section>
+<section class="sec" id="duvidas" aria-labelledby="t-faq">
+<div class="wrap">
+<div class="head center rv">
+<span class="eyebrow">Dúvidas</span>
+<h2 class="title" id="t-faq">Perguntas frequentes</h2>
+<span class="rule" aria-hidden="true"></span>
+</div>
+<div class="faq">
+<details open><summary>Quem fabrica os móveis da Vorani?</summary><p>A Italínea, em Bento Gonçalves (RS). Ela é a maior rede de lojas de móveis planejados da América Latina e tem um parque fabril de 125 mil m².</p></details>
+<details><summary>Qual é a garantia dos móveis?</summary><p>Os móveis têm 5 anos de garantia, com fabricação Italínea e uma equipe de pós-venda dedicada.</p></details>
+<details><summary>Como funciona o projeto?</summary><p>Você conversa com um projetista designer de interiores na loja. Ele monta um moodboard exclusivo com cores, materiais e acabamentos, mede cada parede no seu imóvel e entrega o projeto executivo detalhado peça por peça.</p></details>
+<details><summary>Consigo acompanhar o meu pedido?</summary><p>Sim. Você acompanha o pedido em tempo real pelo aplicativo, da fabricação à montagem.</p></details>
+<details><summary>Quais formas de pagamento vocês oferecem?</summary><p>A Vorani tem financeira própria, com condições pensadas para o projeto caber no seu planejamento. As condições são combinadas direto com o gerente na loja.</p></details>
+<details><summary>Quais ambientes vocês projetam?</summary><p>Cozinhas, livings, dormitórios, closets, banheiros, home office, lavanderias, espaços gourmet e espaços comerciais, em apartamentos e casas.</p></details>
+<details><summary>O material é seguro para a minha família?</summary><p>A Italínea usa MDP e MDF E1, de baixa emissão de formaldeído, feito com madeira de florestas plantadas.</p></details>
+<details><summary>Onde fica a loja?</summary><p>A Vorani Conceito fica na Av. Braz Leme, 1335, Casa Verde, São Paulo (SP), CEP 02511-000. A Vorani também tem lojas na Penha e no Imirim.</p></details>
+</div>
+</div>
+</section>
+<section class="sec" id="visite" aria-labelledby="t-vis" style="padding-top:0">
+<div class="wrap visit">
+<div class="visit-card rv">
+<span class="eyebrow">Visite a loja conceito</span>
+<h2 class="title" id="t-vis">Venha conhecer e se surpreender</h2>
+<span class="rule" aria-hidden="true"></span>
+<dl>
+<div><dt>Endereço</dt><dd>Av. Braz Leme, 1335 - Casa Verde<br>São Paulo, SP · 02511-000</dd></div>
+<div><dt>WhatsApp e telefone</dt><dd><a href="https://wa.me/551125381890" target="_blank" rel="noopener">(11) 2538-1890</a></dd></div>
+<div><dt>E-mail</dt><dd><a href="mailto:adm@voraniplanejados.com.br">adm@voraniplanejados.com.br</a></dd></div>
+<div><dt>Instagram</dt><dd><a href="https://www.instagram.com/voraniconceitoitalinea/" target="_blank" rel="noopener">@voraniconceitoitalinea</a></dd></div>
+</dl>
+<div class="visit-btns">
+<a class="btn btn-gold" href="https://wa.me/551125381890?text=Ol%C3%A1!%20Quero%20agendar%20uma%20visita%20na%20Vorani%20Conceito." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.5c.2 2.6 2.4 5 5.2 5.6l1.1-1.3 1.9.9-.4 1.6c-3.8.4-8-3.5-8.2-7.6L10.2 7l.9 1.9z"/></svg>Agendar visita</a>
+<a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Braz%20Leme%2C%201335%20-%20Casa%20Verde%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002511-000" target="_blank" rel="noopener">Ver no mapa</a>
+</div>
+<p class="stores">A Vorani também tem lojas na Penha e no Imirim.</p>
+</div>
+<div class="visit-photo rv"><picture><source type="image/avif" srcset="img/pessoas-cozinha-480.avif 480w, img/pessoas-cozinha-800.avif 800w, img/pessoas-cozinha-1200.avif 1200w" sizes="(max-width: 860px) 100vw, 560px"><source type="image/webp" srcset="img/pessoas-cozinha-480.webp 480w, img/pessoas-cozinha-800.webp 800w, img/pessoas-cozinha-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 560px"><img src="img/pessoas-cozinha-800.webp" width="1200" height="800" alt="Casal tomando café numa cozinha em madeira clara" loading="lazy" decoding="async"></picture></div>
+</div>
+</section>
 </main>
-
 <footer class="foot">
-  <div class="wrap">
-    <span class="logo"><img src="img/logo-vorani.jpeg" alt="Vorani Planejados"></span>
-    <small class="credit">Foto de abertura: Shixart1985, CC BY 2.0, via Wikimedia Commons.</small>
-    <nav aria-label="Lojas"><span>Penha</span><span>Imirim</span><span>Braz Leme</span></nav>
-    <nav aria-label="Redes"><a href="https://www.instagram.com/voraniconceitoitalinea/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@voraniplanejados" target="_blank" rel="noopener">TikTok</a><a href="https://voraniplanejados.com.br/" target="_blank" rel="noopener">voraniplanejados.com.br</a></nav>
-  </div>
+<div class="wrap foot-grid">
+<div>
+<span class="foot-logo"><img src="img/logo-claro.svg" width="358" height="117" alt="Vorani Conceito" loading="lazy"></span>
+<p>Móveis planejados de estética elegante e atemporal, projetados na loja e fabricados pela Italínea.</p>
+</div>
+<div>
+<h3>Vorani Conceito</h3>
+<p>Av. Braz Leme, 1335<br>Casa Verde, São Paulo, SP<br>02511-000</p>
+</div>
+<div>
+<h3>Fale com a gente</h3>
+<a href="https://wa.me/551125381890" target="_blank" rel="noopener">WhatsApp (11) 2538-1890</a>
+<a href="mailto:adm@voraniplanejados.com.br">adm@voraniplanejados.com.br</a>
+</div>
+<div>
+<h3>Siga</h3>
+<a href="https://www.instagram.com/voraniconceitoitalinea/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://www.tiktok.com/@voraniplanejados" target="_blank" rel="noopener">TikTok</a>
+<a href="https://voraniplanejados.com.br/" target="_blank" rel="noopener">voraniplanejados.com.br</a>
+</div>
+</div>
+<div class="foot-bar">
+<div class="wrap">
+<span>© 2026 Vorani Planejados · Lojas Braz Leme, Imirim e Penha</span>
+<span>Fabricação Italínea · Imagens ilustrativas do showroom Italínea</span>
+</div>
+</div>
 </footer>
-
+<a class="wa" href="https://wa.me/551125381890?text=Ol%C3%A1!%20Quero%20agendar%20uma%20visita%20na%20Vorani%20Conceito." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.5c.2 2.6 2.4 5 5.2 5.6l1.1-1.3 1.9.9-.4 1.6c-3.8.4-8-3.5-8.2-7.6L10.2 7l.9 1.9z"/></svg></i><em>WhatsApp</em></a>
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+<div class="lb-in">
+<picture><source type="image/avif"><img alt=""></picture>
+<p id="lb-cap"></p>
+<button class="lb-x" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<button class="lb-prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="lb-next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+</dialog>
 </body>
 </html>
