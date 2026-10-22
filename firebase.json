@@ -64,7 +64,7 @@
         ]
       },
       {
-        "source": "app.js",
+        "source": "(app|indique).js",
         "headers": [
           {
             "key": "Cache-Control",
