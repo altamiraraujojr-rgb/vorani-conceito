@@ -3,7 +3,7 @@
 'use strict';
 var d = document, w = window;
 var reduce = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var WA = '551125381890';
+var WA = '551125747865';
 var nav = d.querySelector('.nav'), toggle = d.querySelector('.nav-toggle');
 function setMenu(open) {
 nav.classList.toggle('open', open);
