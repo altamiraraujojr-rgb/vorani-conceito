@@ -1,3 +1,8 @@
 .vercel
 .env*
 .firebase
+
+# Auroq (só local, não vai para o site)
+CLAUDE.md
+AGENTS.md
+.claude/
